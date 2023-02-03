@@ -1,0 +1,197 @@
+Year,Industry,Size,Value
+2019,Food products,1-9 employees,0.12533366375947674
+2019,Food products,10-19 employees,0.3139791691496602
+2019,Food products,20-49 employees,1.143469966955311
+2019,Food products,50-249 employees,5.809854203807841
+2019,Food products,250 employees and more,7.126249876693117
+2019,Food products,All enterprises,14.518886880365406
+2019,Beverages,1-9 employees,0.0329364705820116
+2019,Beverages,10-19 employees,0.06438125850506313
+2019,Beverages,20-49 employees,0.2789282266805289
+2019,Beverages,50-249 employees,0.8911831221583014
+2019,Beverages,250 employees and more,2.5972124825775547
+2019,Beverages,All enterprises,3.8646415605034594
+2019,Textiles,1-9 employees,0.055072428985348504
+2019,Textiles,20-49 employees,0.21472555310722455
+2019,Textiles,50-249 employees,0.6408002212211069
+2019,Textiles,All enterprises,1.308345160939989
+2019,"Wood products, excluding furniture",1-9 employees,0.039668489637709595
+2019,"Wood products, excluding furniture",10-19 employees,0.0737132284869553
+2019,"Wood products, excluding furniture",20-49 employees,0.4191569496693197
+2019,"Wood products, excluding furniture",50-249 employees,3.13242046433716
+2019,"Wood products, excluding furniture",250 employees and more,0.7824183093840505
+2019,"Wood products, excluding furniture",All enterprises,4.447377445405002
+2019,Paper and paper products,1-9 employees,0.011822477296752135
+2019,Paper and paper products,20-49 employees,0.14611837709781186
+2019,Paper and paper products,50-249 employees,1.9045734562055958
+2019,Paper and paper products,All enterprises,4.514351754318541
+2019,Printing and reproduction of recorded media,1-9 employees,0.03570044689215308
+2019,Printing and reproduction of recorded media,10-19 employees,0.04434166882680619
+2019,Printing and reproduction of recorded media,20-49 employees,0.23218057215638765
+2019,Printing and reproduction of recorded media,50-249 employees,1.0306401346557847
+2019,Printing and reproduction of recorded media,250 employees and more,0.678154894139679
+2019,Printing and reproduction of recorded media,All enterprises,2.0210177166708103
+2019,Coke and refined petroleum products,1-9 employees,0.24262015691792851
+2019,Coke and refined petroleum products,10-19 employees,0.21738350105662715
+2019,Coke and refined petroleum products,20-49 employees,1.0464185768471836
+2019,Coke and refined petroleum products,50-249 employees,5.273659809766652
+2019,Coke and refined petroleum products,250 employees and more,8.277315555462893
+2019,Coke and refined petroleum products,All enterprises,15.057397603941089
+2019,Rubber and plastics products,1-9 employees,0.0281233983719446
+2019,Rubber and plastics products,10-19 employees,0.0773906054002347
+2019,Rubber and plastics products,20-49 employees,0.3440941253955545
+2019,Rubber and plastics products,50-249 employees,2.3788057210971
+2019,Rubber and plastics products,250 employees and more,2.0912997580228825
+2019,Rubber and plastics products,All enterprises,4.919713604397909
+2019,Other non-metallic mineral products,1-9 employees,0.15102290256157797
+2019,Other non-metallic mineral products,20-49 employees,0.5345334931058616
+2019,Other non-metallic mineral products,50-249 employees,1.9698933484921708
+2019,Other non-metallic mineral products,All enterprises,3.2703058819795197
+2019,Basic metals,1-9 employees,0.014023112299974452
+2019,Basic metals,10-19 employees,0.031106981519059898
+2019,Basic metals,20-49 employees,0.1681482098952335
+2019,Basic metals,50-249 employees,1.1126699728989362
+2019,Basic metals,250 employees and more,3.669270376443079
+2019,Basic metals,All enterprises,4.9952186491664765
+2019,"Fabricated metal products, except machinery",1-9 employees,0.09385946111546596
+2019,"Fabricated metal products, except machinery",10-19 employees,0.14457648869917694
+2019,"Fabricated metal products, except machinery",20-49 employees,0.8720341582628682
+2019,"Fabricated metal products, except machinery",50-249 employees,4.519916286684381
+2019,"Fabricated metal products, except machinery",250 employees and more,2.565551822032303
+2019,"Fabricated metal products, except machinery",All enterprises,8.195938216794195
+2019,"Computer, electronic and optical products",1-9 employees,0.021466242542850893
+2019,"Computer, electronic and optical products",10-19 employees,0.04081609941351045
+2019,"Computer, electronic and optical products",20-49 employees,0.17795610555007008
+2019,"Computer, electronic and optical products",50-249 employees,1.3055481251596766
+2019,"Computer, electronic and optical products",250 employees and more,1.7836412647225308
+2019,"Computer, electronic and optical products",All enterprises,3.3294278373886383
+2019,Electrical equipment,1-9 employees,0.018145397564731835
+2019,Electrical equipment,20-49 employees,0.18844516865736619
+2019,Electrical equipment,50-249 employees,1.0987651807499983
+2019,Electrical equipment,All enterprises,1.8866252718586152
+2019,Machinery and equipment n.e.c.,1-9 employees,0.05186636443384481
+2019,Machinery and equipment n.e.c.,10-19 employees,0.10075227312544752
+2019,Machinery and equipment n.e.c.,20-49 employees,0.5661800803291834
+2019,Machinery and equipment n.e.c.,50-249 employees,3.733123574191224
+2019,Machinery and equipment n.e.c.,250 employees and more,3.1775017060693744
+2019,Machinery and equipment n.e.c.,All enterprises,7.629423994259267
+2019,"Motor vehicles, trailers and semi-trailers",1-9 employees,0.02656145412812775
+2019,"Motor vehicles, trailers and semi-trailers",10-19 employees,0.05092313290039262
+2019,"Motor vehicles, trailers and semi-trailers",20-49 employees,0.24452587063995418
+2019,"Motor vehicles, trailers and semi-trailers",50-249 employees,2.2282415084734
+2019,"Motor vehicles, trailers and semi-trailers",250 employees and more,12.163318979426654
+2019,"Motor vehicles, trailers and semi-trailers",All enterprises,14.713570945568529
+2019,Furniture,1-9 employees,0.04157014240116856
+2019,Furniture,10-19 employees,0.056505484472357
+2019,Furniture,20-49 employees,0.27940375170334647
+2019,Furniture,50-249 employees,1.2813150550781118
+2019,Furniture,250 employees and more,1.0951597886061017
+2019,Furniture,All enterprises,2.7539542222610858
+2019,Other manufacturing,1-9 employees,0.05508178397131874
+2019,Other manufacturing,10-19 employees,0.09298582600986394
+2019,Other manufacturing,20-49 employees,0.34120881822371496
+2019,Other manufacturing,50-249 employees,1.2541771159850221
+2019,Other manufacturing,250 employees and more,0.8303497138813521
+2019,Other manufacturing,All enterprises,2.5738032541814646
+2019,Total manufacturing,1-9 employees,1.0448743856827716
+2019,Total manufacturing,10-19 employees,1.667849811126529
+2019,Total manufacturing,20-49 employees,7.197527996497308
+2019,Total manufacturing,50-249 employees,39.56558730096246
+2019,Total manufacturing,250 employees and more,50.52416050184112
+2020,Food products,1-9 employees,0.13332478218397367
+2020,Food products,10-19 employees,0.30945566071187053
+2020,Food products,20-49 employees,1.2463337295363057
+2020,Food products,50-249 employees,6.534101800449606
+2020,Food products,250 employees and more,8.599822592143362
+2020,Food products,All enterprises,16.823038560803994
+2020,Beverages,1-9 employees,0.044784034007116454
+2020,Beverages,10-19 employees,0.09381673726113651
+2020,Beverages,20-49 employees,0.30549796186069195
+2020,Beverages,50-249 employees,0.9046377579397978
+2020,Beverages,250 employees and more,2.8229960541034065
+2020,Beverages,All enterprises,4.1717325409510275
+2020,Textiles,1-9 employees,0.05923378797605404
+2020,Textiles,20-49 employees,0.22773711134576616
+2020,Textiles,50-249 employees,0.6294599438001478
+2020,Textiles,All enterprises,1.23357188836621
+2020,"Wood products, excluding furniture",1-9 employees,0.049237039337642445
+2020,"Wood products, excluding furniture",10-19 employees,0.07339061294856421
+2020,"Wood products, excluding furniture",20-49 employees,0.5193090001003191
+2020,"Wood products, excluding furniture",50-249 employees,4.925414104540464
+2020,"Wood products, excluding furniture",250 employees and more,1.0342965292590927
+2020,"Wood products, excluding furniture",All enterprises,6.601647286186083
+2020,Paper and paper products,1-9 employees,0.008313500179604529
+2020,Paper and paper products,20-49 employees,0.1622995991630798
+2020,Paper and paper products,50-249 employees,1.9611450048932513
+2020,Paper and paper products,All enterprises,4.336986942540979
+2020,Printing and reproduction of recorded media,1-9 employees,0.05709411801563728
+2020,Printing and reproduction of recorded media,20-49 employees,0.19821221460560118
+2020,Printing and reproduction of recorded media,50-249 employees,0.985891696827218
+2020,Printing and reproduction of recorded media,All enterprises,1.8289497781264201
+2020,Coke and refined petroleum products,1-9 employees,0.3090725305550785
+2020,Coke and refined petroleum products,10-19 employees,0.3791953279808997
+2020,Coke and refined petroleum products,20-49 employees,1.283708659901508
+2020,Coke and refined petroleum products,50-249 employees,5.53607633166718
+2020,Coke and refined petroleum products,250 employees and more,5.817639070126289
+2020,Coke and refined petroleum products,All enterprises,13.325691920230955
+2020,Rubber and plastics products,1-9 employees,0.07267152367560328
+2020,Rubber and plastics products,10-19 employees,0.15224972348061613
+2020,Rubber and plastics products,20-49 employees,0.5991717204263303
+2020,Rubber and plastics products,50-249 employees,2.8548497861744115
+2020,Rubber and plastics products,250 employees and more,1.4739132410634852
+2020,Rubber and plastics products,All enterprises,5.152855994820447
+2020,Other non-metallic mineral products,1-9 employees,0.10115137186513823
+2020,Other non-metallic mineral products,20-49 employees,0.5234821028175374
+2020,Other non-metallic mineral products,50-249 employees,1.9357578885197069
+2020,Other non-metallic mineral products,All enterprises,3.4381141653659917
+2020,Basic metals,1-9 employees,0.046080420837103744
+2020,Basic metals,10-19 employees,0.02631887422535759
+2020,Basic metals,20-49 employees,0.18205282172184084
+2020,Basic metals,50-249 employees,1.1291824556687404
+2020,Basic metals,250 employees and more,3.833309032332808
+2020,Basic metals,All enterprises,5.21694360478585
+2020,"Fabricated metal products, except machinery",1-9 employees,0.11001027058127799
+2020,"Fabricated metal products, except machinery",10-19 employees,0.16863814601288876
+2020,"Fabricated metal products, except machinery",20-49 employees,0.8823715198250955
+2020,"Fabricated metal products, except machinery",50-249 employees,4.723556250205938
+2020,"Fabricated metal products, except machinery",250 employees and more,2.2884180308679354
+2020,"Fabricated metal products, except machinery",All enterprises,8.172994217493136
+2020,"Computer, electronic and optical products",1-9 employees,0.025413177582028584
+2020,"Computer, electronic and optical products",10-19 employees,0.051033814878110074
+2020,"Computer, electronic and optical products",20-49 employees,0.19951579422782306
+2020,"Computer, electronic and optical products",50-249 employees,1.464214541642734
+2020,"Computer, electronic and optical products",250 employees and more,1.7149572459838618
+2020,"Computer, electronic and optical products",All enterprises,3.455134574314558
+2020,Electrical equipment,1-9 employees,0.01931717219290498
+2020,Electrical equipment,20-49 employees,0.2243127470638655
+2020,Electrical equipment,50-249 employees,1.0081239042547163
+2020,Electrical equipment,All enterprises,1.8793782587538288
+2020,Machinery and equipment n.e.c.,1-9 employees,0.10730234470759455
+2020,Machinery and equipment n.e.c.,10-19 employees,0.12494031649788553
+2020,Machinery and equipment n.e.c.,20-49 employees,0.6161133927824365
+2020,Machinery and equipment n.e.c.,50-249 employees,3.748867783165309
+2020,Machinery and equipment n.e.c.,250 employees and more,2.622263622707385
+2020,Machinery and equipment n.e.c.,All enterprises,7.219487455639488
+2020,"Motor vehicles, trailers and semi-trailers",1-9 employees,0.03453928177588825
+2020,"Motor vehicles, trailers and semi-trailers",10-19 employees,0.051001371332854706
+2020,"Motor vehicles, trailers and semi-trailers",20-49 employees,0.2759385405620254
+2020,"Motor vehicles, trailers and semi-trailers",50-249 employees,1.99898259557868
+2020,"Motor vehicles, trailers and semi-trailers",250 employees and more,9.374934159991152
+2020,"Motor vehicles, trailers and semi-trailers",All enterprises,11.7353959492406
+2020,Furniture,1-9 employees,0.0342207981056414
+2020,Furniture,10-19 employees,0.053204839334253726
+2020,Furniture,20-49 employees,0.25971794984856006
+2020,Furniture,50-249 employees,1.460697945840689
+2020,Furniture,250 employees and more,0.809242835951497
+2020,Furniture,All enterprises,2.617084369080641
+2020,Other manufacturing,1-9 employees,0.13517421622392878
+2020,Other manufacturing,10-19 employees,0.10750913748433934
+2020,Other manufacturing,20-49 employees,0.39761058987709214
+2020,Other manufacturing,50-249 employees,1.3216811703159237
+2020,Other manufacturing,250 employees and more,0.8290173836196296
+2020,Other manufacturing,All enterprises,2.790992493299792
+2020,Total manufacturing,1-9 employees,1.3469403655810943
+2020,Total manufacturing,10-19 employees,2.173250055488762
+2020,Total manufacturing,20-49 employees,8.103385459887
+2020,Total manufacturing,50-249 employees,43.12264095304227
+2020,Total manufacturing,250 employees and more,45.25378316177975

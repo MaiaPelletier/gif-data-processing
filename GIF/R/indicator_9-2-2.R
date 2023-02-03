@@ -9,7 +9,7 @@ library(readr)
 
 employment_data <- get_cansim("14-10-0202-01", factors = FALSE)
 
-geocodes <- read_csv(here("gif-data-processing/geocodes.csv"))
+geocodes <- read_csv(here("geocodes.csv"))
 
 
 manufacturing_employment <- 
@@ -47,6 +47,7 @@ manufacturing_employment <-
   relocate(GeoCode, .before = Value) %>%
   mutate(GeoCode = ifelse(`Type of employee` == "All employees" & `Industry` == "Manufacturing", GeoCode, NA))
 
+
 data_final <- 
   bind_rows(
     manufacturing_employment %>%
@@ -56,4 +57,4 @@ data_final <-
       filter(!(Geography == "Canada" & `Type of employee` == "All employees" & Industry == "Manufacturing"))
   )
 
-write_csv(data_final, here("gif-data-processing", "data", "indicator_9-2-2.csv"), na = "")
+# write_csv(data_final, here("gif-data-processing", "data", "indicator_9-2-2.csv"), na = "")
