@@ -1,14 +1,11 @@
 # Indicator 9.5.2 ------------------------------------------------------
-# 9.5.2 9.5.2 Researchers (in full-time equivalent) per million inhabitants
+# 9.5.2 Researchers (in full-time equivalent) per million inhabitants
 
 library(cansim)
 library(here)
 library(dplyr)
-library(stringr)
-library(readr)
 
 rd_personnel <- get_cansim("27-10-0022-01", factors = FALSE)
-
 pop_ests <- get_cansim("17-10-0005-01", factors = FALSE)
 
 
@@ -84,5 +81,5 @@ data_final <-
       filter(!(`Type of science` == "Total sciences"))
   )
 
-write_csv(data_final, here("gif-data-processing", "data", "indicator_9-5-2.csv"))
+write.csv(data_final, "data/indicator_9-5-2.csv", na = "", row.names = FALSE)
 

@@ -2,22 +2,17 @@
 # 9.5.1 Research and development expenditure as a proportion of GDP
 
 library(cansim)
-library(here)
 library(dplyr)
-library(stringr)
-library(readr)
 
 rd_gdp <- get_cansim("27-10-0273-01", factors = FALSE)
-
 annual_gdp <- get_cansim("36-10-0222-01", factors = FALSE)
-
-geocodes <- read_csv(here("gif-data-processing/geocodes.csv"))
+geocodes <- read.csv("geocodes.csv")
 
 table_filter <- function(table) {
   
   table %>%
     filter(
-      REF_DATE >= 2010,
+      REF_DATE >= 2015,
       Prices == "Current prices"
     )
   
@@ -55,7 +50,7 @@ rd_gdp_data <-
     Value = round((rd_gdp/annual_gdp)*100, 2)
   ) %>% 
   left_join(geocodes) %>%
-  mutate(GeoCode = ifelse(`Science type` == "Total sciences", GeoCode, NA)) %>% 
+  mutate(GeoCode = ifelse(`Science type` == "Total sciences", GeoCode, NA)) %>%
   relocate(GeoCode, .before = Value)
 
 data_final <- 
@@ -67,5 +62,5 @@ data_final <-
       filter(!(Geography == "Canada" & `Science type` == "Total sciences"))
   )  
 
-write_csv(data_final, here("gif-data-processing", "data", "indicator_9-5-1.csv"))
+write.csv(data_final, "data/indicator_9-5-1.csv", na = "", row.names = FALSE)
 
