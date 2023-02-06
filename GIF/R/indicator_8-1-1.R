@@ -27,7 +27,7 @@ national_gdp <-
     Year = substr(REF_DATE, 1, 4)
   ) %>% 
   group_by(Year, Geography) %>% 
-  summarise(GDP = mean(VALUE), .groups = "drop")
+  summarise(GDP = (mean(VALUE)) * 1000000, .groups = "drop")
 
 pt_gdp <-
   pt_gdp %>% 
@@ -40,7 +40,8 @@ pt_gdp <-
     Year = REF_DATE,
     Geography = GEO,
     GDP = VALUE
-  )
+  ) %>% 
+  mutate(GDP = GDP * 1000000)
 
 pop_ests <- 
   pop_ests %>% 
@@ -68,7 +69,8 @@ all_gdp <-
   group_by(Geography) %>% 
   mutate(
     Value = (gdp_per_cap - lag(gdp_per_cap)) / lag(gdp_per_cap),
-    Value = round(Value * 100, 2)
+    Value = round(Value * 100, 2),
+    Geography = recode(Geography, Canada = "")
   ) %>% 
   filter(Year > 2014) %>% 
   select(-c(3:5)) %>% 

@@ -5,8 +5,8 @@ library(dplyr)
 library(stringr)
 library(readr)
 
-en <- get_cansim("46-10-0065-01", factors = FALSE, language = "en")
-fr <- get_cansim("46-10-0065-01", factors = FALSE, language = "fr")
+en <- get_cansim("14-10-0417-01", factors = FALSE, language = "en")
+fr <- get_cansim("14-10-0417-01", factors = FALSE, language = "fr")
 
 dfs <- list(en, fr)
 
@@ -17,7 +17,7 @@ filtering_dfs <- function(df) {
   df %>%
     # Need to change these selections to the disaggregations to be translated
     # and the respective hierarchy column
-    select(c(4, 20)) %>%
+    select(c(6, 27)) %>%
     distinct() %>%
     # filter_at(c(2), ~ str_starts(.x, "1.2.3.34")) %>%
     # mutate_at(c(1), ~ str_remove(.x, " \\[.*\\]")) %>%
