@@ -31,55 +31,45 @@ age_hierarchy <-
     "1.138"
   )
 
+rd_personnel %>% 
+  distinct(GEO)
 
 researchers <- 
-  left_join(
-    
-    # Researcher numbers
-    rd_personnel %>%
-      filter(
-        REF_DATE >= 2010,
-        `Occupational category` %in% c("Researchers", "On-site research consultants"),
-        `Performing sector` == "Total performing sector"
-      ) %>%
-      select(
-        Year = REF_DATE,
-        #`Performing sector`,
-        `Type of science`,
-        `Occupational category`,
-        No_Personnel = VALUE
-      ) %>%
-      group_by_at(1:3) %>%
-      summarise(No_Personnel = sum(No_Personnel), .groups = "drop"),
-    
-    # Population estimate
-    pop_ests %>% 
-      filter(
-        REF_DATE >= 2010,
-        GEO == "Canada",
-        Sex == "Both sexes",
-        `Hierarchy for Age group` %in% age_hierarchy
-      ) %>%
-      select(
-        Year = REF_DATE,
-        Population = VALUE
-      )
-    ) %>%
-    transmute(
-      Year, `Type of science`,
-      Value = (No_Personnel/Population)*1000000
-    )
+  rd_personnel %>%
+  filter(
+    REF_DATE >= 2010,
+    `Occupational category` %in% c("Researchers", "On-site research consultants"),
+    `Performing sector` == "Total, performing sectors",
+    `Type of science` == "Total sciences"
+  ) %>%
+  select(
+    Year = REF_DATE,
+    #`Performing sector`,
+    `Occupational category`,
+    No_Personnel = VALUE
+  ) %>%
+  group_by(Year) %>%
+  summarise(No_Personnel = sum(No_Personnel), .groups = "drop")
 
+population <- 
+  pop_ests %>%
+  filter(
+    REF_DATE >= 2010,
+    GEO == "Canada",
+    Sex == "Both sexes",
+    `Age group` %in% c("15 to 64 years", "65 years and over")
+  ) %>%
+  select(
+    Year = REF_DATE,
+    `Age group`,
+    VALUE
+  ) %>% 
+  group_by(Year) %>% 
+  summarise(Population = sum(VALUE), .groups = "drop")
 
-
-data_final <-
-  bind_rows(
-    researchers %>%
-      filter(`Type of science` == "Total sciences") %>%
-      mutate(across(2:(ncol(.)-1), ~ "")),
-    researchers %>%
-      filter(!(`Type of science` == "Total sciences"))
-  )
+data_final <- 
+  left_join(researchers, population) %>% 
+  transmute(Year, Value = (No_Personnel/Population)*1000000)
 
 write.csv(data_final, "data/indicator_9-5-2.csv", na = "", row.names = FALSE)
 
