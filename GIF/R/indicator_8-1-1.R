@@ -15,7 +15,7 @@ national_gdp <-
   filter(
     substr(REF_DATE, 1, 4) >= 2014,
     `Seasonal adjustment` == "Seasonally adjusted at annual rates",
-    Prices == "2012 constant prices",
+    Prices == "Chained (2012) dollars",
     `North American Industry Classification System (NAICS)` == "All industries [T001]"
   ) %>% 
   select(
@@ -27,7 +27,7 @@ national_gdp <-
     Year = substr(REF_DATE, 1, 4)
   ) %>% 
   group_by(Year, Geography) %>% 
-  summarise(GDP = (mean(VALUE)) * 1000000, .groups = "drop")
+  summarise(GDP = mean(VALUE), .groups = "drop")
 
 pt_gdp <-
   pt_gdp %>% 
@@ -40,8 +40,7 @@ pt_gdp <-
     Year = REF_DATE,
     Geography = GEO,
     GDP = VALUE
-  ) %>% 
-  mutate(GDP = GDP * 1000000)
+  )
 
 pop_ests <- 
   pop_ests %>% 
@@ -63,14 +62,14 @@ all_gdp <-
   ) %>% 
   left_join(pop_ests) %>% 
   mutate(
-    gdp_per_cap = GDP/Population
+    gdp_per_cap = (GDP*1000000)/Population
   ) %>% 
   arrange(Geography, Year) %>% 
   group_by(Geography) %>% 
   mutate(
+    Geography = recode(Geography, Canada = ""),
     Value = (gdp_per_cap - lag(gdp_per_cap)) / lag(gdp_per_cap),
-    Value = round(Value * 100, 2),
-    Geography = recode(Geography, Canada = "")
+    Value = round(Value * 100, 2)
   ) %>% 
   filter(Year > 2014) %>% 
   select(-c(3:5)) %>% 

@@ -4,50 +4,58 @@
 library(cansim)
 library(dplyr)
 library(stringr)
-library(here)
-library(readr)
 library(tidyr)
 
 finance_stats <- get_cansim("10-10-0147-01", factors = FALSE)
 
-geocodes <- read_csv("gif-data-processing/geocodes.csv")
+geocodes <- read.csv("geocodes.csv")
 
-ops <- c("Revenue [1]", "Taxes [11]")
+cgfs <- c(
+  "Taxes [11]",
+  "Expense [2]",
+  "Consumption of fixed capital [23]",
+  "Memorandum items, capitalized research and development costs",
+  "Memorandum items, consumption of fixed capital according to public sector accounts",
+  "Memorandum items, nonfinancial assets according to public sector accounts"
+  )
 
-tax_revenue <- 
+data_final <- 
   finance_stats %>%
   filter(
-    REF_DATE >= 2015,
     `Display value` == "Stocks",
-   # GEO == "Canada",
-    `Statement of operations and balance sheet` %in% ops
+    GEO == "Canada",
+    `Public sector components` == "Consolidated Canadian general government",
+    `Statement of operations and balance sheet` %in% cgfs
   ) %>%
   select(
     Year = REF_DATE,
-    Geography = GEO,
-    `Public sector components`,
-    Finances = `Statement of operations and balance sheet`,
+    CGFS = `Statement of operations and balance sheet`,
     Value = VALUE
-    ) %>%
+  ) %>% 
   mutate(
-    Finances = str_remove(Finances, " \\[[0-9]*\\]")
-    ) %>%
+    CGFS = str_remove(CGFS, " \\[[0-9]*\\]")
+    ) %>% 
   pivot_wider(
-    names_from = "Finances",
+    names_from = "CGFS",
     values_from = "Value"
-  ) %>%
-  mutate(Value = round((Taxes/Revenue)*100, 2)) %>%
-  select(!(Revenue:Taxes)) %>%
-  left_join(geocodes) %>%
-  relocate(GeoCode, .before = Value)
-
-data_final <- 
-  bind_rows(
-    tax_revenue %>%
-      filter(Geography == "Canada", `Public sector components` == "Consolidated Canadian general government") %>%
-      mutate(across(Geography: `Public sector components`, ~ "")),
-    tax_revenue %>%
-      filter(!(Geography == "Canada" & `Public sector components` == "Consolidated Canadian general government"))
-  )
+  ) %>% 
+  rename(
+    NFA = `Memorandum items, nonfinancial assets according to public sector accounts`
+  ) %>% 
+  transmute(
+    Year, A = Taxes,
+    B = Expense - `Consumption of fixed capital` + `Memorandum items, consumption of fixed capital according to public sector accounts` + `Memorandum items, capitalized research and development costs`,
+    C = NFA - lag(NFA)
+  ) %>% 
+  transmute(
+    Year,
+    Value = round((A/(B + C)) * 100, 2)
+  ) %>% 
+  filter(Year >= 2015)
  
-write_csv(data_final, here("gif-data-processing", "data", "indicator_17-1-2.csv"), na = "")
+write.csv(
+  data_final, 
+  "data/indicator_17-1-2.csv",
+  row.names = FALSE,
+  na = ""
+)

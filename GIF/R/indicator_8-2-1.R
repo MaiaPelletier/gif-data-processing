@@ -13,7 +13,7 @@ national_gdp <-
   filter(
     substr(REF_DATE, 1, 4) >= 2014,
     `Seasonal adjustment` == "Seasonally adjusted at annual rates",
-    Prices == "2012 constant prices",
+    Prices == "Chained (2012) dollars",
     `North American Industry Classification System (NAICS)` == "All industries [T001]"
   ) %>% 
   select(
@@ -24,7 +24,7 @@ national_gdp <-
     Year = substr(REF_DATE, 1, 4)
   ) %>% 
   group_by(Year) %>% 
-  summarise(GDP = (mean(VALUE)) * 1000000, .groups = "drop")
+  summarise(GDP = mean(VALUE), .groups = "drop")
 
 labour_force <- 
   labour_force %>% 
@@ -40,13 +40,14 @@ labour_force <-
     Employment = VALUE
   )
 
-data_final <- 
+data_final <-
   left_join(national_gdp, labour_force) %>% 
   mutate(
-    LabProd = GDP/Employment
+    LabProd = (GDP*1000000)/(Employment*1000)
   ) %>% 
   transmute(
-    Year,
+    Year, 
+    # LabProd, year_before = lag(LabProd),
     Value = (LabProd - lag(LabProd)) / lag(LabProd),
     Value = round(Value * 100, 2)
   ) %>% 
