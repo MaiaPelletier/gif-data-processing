@@ -2,17 +2,15 @@
 # Manufacturing employment as a proportion of total employment
 
 library(cansim)
-library(here)
 library(dplyr)
 library(stringr)
-library(readr)
+library(tidyr)
 
 employment_data <- get_cansim("14-10-0202-01", factors = FALSE)
+geocodes <- read.csv("geocodes.csv")
 
-geocodes <- read_csv(here("geocodes.csv"))
 
-
-manufacturing_employment <- 
+manufacturing_employment <-
   employment_data %>%
   filter(
     REF_DATE >= 2015,
@@ -27,7 +25,7 @@ manufacturing_employment <-
     `Type of employee`,
     Industry = `North American Industry Classification System (NAICS)`,
     Value = VALUE
-  ) %>% 
+  ) %>% distinct(Industry)
   mutate(
     Industry = str_remove(Industry, " \\[.*\\]"),
     Industry = ifelse(str_detect(Industry, "Industrial aggregate"), "All industries", Industry),

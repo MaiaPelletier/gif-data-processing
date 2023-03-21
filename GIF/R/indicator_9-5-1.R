@@ -26,7 +26,8 @@ rd_gdp_data <-
     table_filter() %>%
     filter(
       Funder == "Funder: total, all sectors",
-      Performer == "Performer: total, all sectors"
+      Performer == "Performer: total, all sectors",
+      !is.na(VALUE)
     ) %>%
     select(
       Year = REF_DATE,
